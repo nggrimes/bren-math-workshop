@@ -1,0 +1,81 @@
+---
+title: "Bren Calculus Workshop"
+subtitle: "Intro to Integration"
+author: "Nathaniel Grimes"
+institute: 
+  - "Bren School of Environmental Science & Management"
+  - "University of California at Santa Barbara"
+date: "9/22/2023"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["ucsb.css","chocolate-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,echo=FALSE)
+```
+
+
+```{r xaringan, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view","panelset","tachyons","scribble"))
+```
+
+```{css echo = FALSE}
+.xe-scribble__tools.minimized {
+  display: none;
+}
+
+.remark-slide-content {
+  font-size: 28px;
+  padding: 20px 80px 20px 80px;
+}
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+.remark-code {
+  font-size: 24px;
+}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+
+.small{
+font-size: 22px;
+}
+
+.mjx-chtml{ font-size: 100% !important; }
+
+.small-math .mjx-chtml{ font-size: 85%; }
+```
+
+```{r echo=FALSE}
+library(here)
+library(tidyverse)
+```
+
+
+# Team Review
+
+How did everyone feel about the problem set?
+
+Anything remaining confusing?
+
+Discuss with Team
+
+---
+
+```{r out.width="55%",fig.align='center'}
+knitr::include_graphics("https://imgs.xkcd.com/comics/differentiation_and_integration.png")
+```
+

@@ -1,0 +1,20 @@
+---
+title: "Calculus Workshop"
+subtitle: "Limits and Derivatives Problem Set"
+author: "Nathan Grimes"
+date: "2023-09-19"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning=FALSE,message=FALSE)
+```
+
+*Answer the following questions to the best of your ability. Feel free to work with anyone in the cohort, though I would encourage attempting on your own first to make sure you fully understand the concepts.*
+
+# Limits
+
+# Derivatives
+
