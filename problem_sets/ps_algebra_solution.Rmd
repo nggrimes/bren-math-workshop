@@ -1,0 +1,260 @@
+---
+title: "Problem Set Solutions"
+subtitle: "Algebra and Graphs"
+author: "Nathaniel Grimes"
+date: "2023-09-20"
+output: 
+  html_document:
+    code_folding: hide
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message=FALSE,warning=FALSE)
+
+library(tidyverse)
+```
+
+*Answer the following questions to the best of your ability. Feel free to work with anyone in the cohort, though I would encourage attempting on your own first to make sure you fully understand the concepts.*
+
+# Algebra basics
+
+1) Describe how solving for the roots (f(x)=0) of equations could be useful in environmental science? List at least one method to do so.
+
+<span style="color:blue">When would a predicted concentration of pollutants reach zero, when does the cost and benefits of a program balance. Any answers in that vein. Quadratic Formula </span>.
+
+2) Solve for x
+
+<span style="color:blue">Solution</span>
+
+a)    
+$$
+\begin{align}
+2x-4=&3x+12 \\
+2x&=3x+16 &\text{Add four to both sides}\\
+-x&=16 &\text{Subtract 3x from both sides}\\
+x&=16
+\end{align}
+$$
+
+b) <span style="color:blue">Solution</span>
+
+$$
+\begin{align}
+-6ax+2b&=x-5c \\
+-6ax&=x-5c-2b &\text{Subtract 2b from both sides} \\
+-6ax-x&=-5c-2b &\text{Subtract x} \\
+x(-6a-1)&=-5c-2b &\text{Factor out x}\\
+x&=\frac{-5c-2b}{(-6a-1)}
+\end{align}
+$$
+
+3) Solve for x
+
+<span style="color:blue">Solution</span>
+
+$$
+\begin{align}
+2x^2+3x-4&=0 \\
+\frac{-(3)\pm\sqrt{3^2-4(2*-4)}}{2(2)}&=0 \\
+x=\frac{-3+\sqrt{41}}{4}&  &x=\frac{-3-\sqrt{41}}{4} \\
+x\approx0.85 & &x\approx-2.35  
+\end{align}
+$$
+    
+b)
+
+<span style="color:blue">Solution</span>
+
+$$
+\begin{align}
+x^2+2x-5&=0 \\
+\frac{-(-2)\pm\sqrt{2^2-4(1*-5)}}{2(1)}&=0 \\
+x=\frac{2+\sqrt{24}}{2}&  &x=\frac{2-\sqrt{24}}{2} \\
+x\approx3.45 & &x\approx-1.45  
+\end{align}
+$$
+
+
+4) Expand these equations
+
+<span style="color:blue">Solution</span>
+
+$$
+\begin{align}
+(x+2)(3x-4)&\\
+3x^2-4x+6x-8 \\
+3x^2+2x-8
+\end{align}
+$$
+
+b)
+
+<span style="color:blue">Solution</span>
+
+$$
+\begin{align}
+(x^2-2y)(x+y^3) \\
+x^3+x^2y^3-2yx-2y^4
+\end{align}
+$$
+
+    
+# Story Problems
+
+5) A new RCP 4.5 projections indicates that carbon emissions in the atmosphere will plateau at around 600 ppm. Today's atmospheric carbon concentration sits at 416 ppm. 
+
+a) If the United States continues to emit proportionally the same amount of carbon (14%), how much carbon will the US emit in 2100 under RCP 4.5? Use the conversion 1ppm=2.13 gigatons.
+
+$$
+\begin{align}
+\frac{58}{416}=\frac{x}{600} \\
+x=83.65 \text{ ppm} \\
+x=83.65\cdot2.13\\
+x=178.18 \text{ gigatons}
+\end{align}
+$$
+
+b) Let's say the US decides to pursue an ambitious policy to extract their contribution of carbon from the air. Climatologists model that policy would have a trajectory of $f(c)=\frac{-1}{8}t^2+6t+123.83$ where t is each year and c is the amount of carbon released by the US. When will the United States eliminate their carbon footprint?
+
+<span style="color:blue">Solution</span>
+<span style="color:blue">Based on the model of the scientists, we need to where the total amount of US carbon equals 0. Because it's a second degree polynomial we can use the quadratic equation to solve.</span>
+
+$$
+\begin{align}
+\frac{1}{8}t^2+6t+123.83=0 \\
+\frac{-6\pm\sqrt{6^2-4(\frac{-1}{8}*123.83)}}{\frac{-2}{8}} \\
+t\approx63.581 \text{ years}
+\end{align}
+$$
+
+<span style="color:blue">We are only concerned about the postive year amounts.</span>
+
+# Graphs
+
+6) Find the slope and y-intercept of these graphs
+
+```{r}
+x=seq(-5,5)
+
+y=2*x+5
+
+w=(1/3)*x-1
+
+z=x-0.5
+
+u=-3*x+2
+
+p1<-ggplot()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  geom_point(aes(x=x,y=y),size=3,color="black")+
+  geom_line(aes(x=x,y=y),size=2,color="black")+
+  theme_bw()+
+  theme(axis.line = element_blank())+
+  scale_y_continuous(breaks=seq(-5,15,2))+
+  scale_x_continuous(breaks=seq(-5,5,by=1))+
+  labs(x="",y="")
+
+p2<-ggplot()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  geom_point(aes(x=x,y=w),size=3,color="blue")+
+  geom_line(aes(x=x,y=w),size=2,color="blue")+
+  theme_bw()+
+  theme(axis.line = element_blank())+
+  scale_y_continuous(breaks=seq(-3,3,1))+
+  scale_x_continuous(breaks=seq(-5,5,by=1))+
+  labs(x="",y="")
+
+p3<-ggplot()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  geom_point(aes(x=x,y=z),size=3,color="red")+
+  geom_line(aes(x=x,y=z),size=2,color="red")+
+  theme_bw()+
+  theme(axis.line = element_blank())+
+  scale_y_continuous(breaks=seq(-5,5,1))+
+  scale_x_continuous(breaks=seq(-5,5,by=1))+
+  labs(x="",y="")
+
+p4<-ggplot()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  geom_point(aes(x=x,y=u),size=3,color="darkgreen")+
+  geom_line(aes(x=x,y=u),size=2,color="darkgreen")+
+  theme_bw()+
+  theme(axis.line = element_blank())+
+  scale_y_continuous(breaks=seq(-15,15,2))+
+  scale_x_continuous(breaks=seq(-5,5,by=1))+
+  labs(x="",y="")
+
+cowplot::plot_grid(p1,p2,p3,p4,labels=c("A","B","C","D"))
+
+```
+
+
+<span style="color:blue">
+The slope for graph A is 2 with a y-intercept of 5.
+</span>
+
+<span style="color:blue">
+The slope for graph B is 1/3 with a y-intercept of -1
+</span>
+
+<span style="color:blue">
+The for graph c is 1 with a y-intercept of -0.5
+</span>
+
+<span style="color:blue">
+The slope for graph D is -3 with a y-intercept of 2
+</span>
+
+7) The growth of sharks are modeled from Von Bertalanffy curves. Scalloped hammerhead sharks in the Atlantic were found to have growth curves that follow the chart below.
+
+```{r}
+vb<-function(a,l,k,t0){
+  l*(1-exp(-k*(a-t0)))
+}
+
+x=seq(0,30)
+
+length=vb(x,214.8,.13,-1.62)
+
+p1<-ggplot()+
+  geom_point(aes(x=x,y=length),color="black",size=3)+
+  geom_line(aes(x=x,y=length),color="black",size=2)+
+  theme_bw()+
+  scale_y_continuous(breaks=seq(35,215,5))+
+  scale_x_continuous(breaks=seq(0,32,by=2))+
+  labs(x="Age (years)",y="Length (cm)")
+
+p1
+```
+
+  a) What is the average slope from ages 0 to 8? From 20 to 30?
+    
+\begin{equation}
+\begin{aligned}
+slope&=\frac{155-40}{8-0} &slope=14.375 \\
+slope&=\frac{210-200}{30-20} &slope=1
+\end{aligned}
+\end{equation}
+
+<span style="color:blue">
+The average rate of change for sharks between the ages of 0 to 8 was 14.375. For the ages, 20 to 30 the average change was 1.
+</span>
+    
+  b) What are the units of the average slopes and why would they change for a shark as they get older?
+  
+  <span style="color:blue">
+  Slopes are in units of length over age, so the slope indicates the growth in centimeters every year. As animals get older, the slow down their growth. Less energy is spent in growing and more invested in reproductive energy.
+  </span>
+    
+  c) How would you find the instantaneous slope for a shark at age 12? What is the closest approximation you can make with this data and graph?
+  
+  <span style="color:blue">
+  We would need to apply calculus to find the true answer, but we can approximate it reasonably well by finding the smallest possible difference between two points around age 12. In this case we can use $\frac{175-172}{13-12}$ to get an approximate instaneous rate of growth of 3 cm per year.
+  
+  [Picture of Scalloped Hammerhead shark](https://inaturalist-open-data.s3.amazonaws.com/photos/19051739/large.jpg)

@@ -39,13 +39,19 @@ library(tidyverse)
 
     b) $(x^2-2y)(x+y^3)$
     
+
 # Story Problems
 
-5) 
+5) A new RCP 4.5 projections indicates that carbon emissions in the atmosphere will plateau at around 600 ppm. Today's atmospheric carbon concentration sits at 416 ppm. 
+
+    a) If the United States continues to emit proportionally the same amount of carbon (14%), how much carbon will the US emit in 2100 under RCP 4.5? Use the conversion 1ppm=2.13 gigatons.
+
+    b) Let's say the US decides to pursue an ambitious policy to extract their contribution of carbon from the air. Climatologists model that policy would have a trajectory of $f(c)=\frac{-1}{8}t^2+6t+123.83$ where t is each year and c is the amount of carbon released by the US. When will the United States eliminate their carbon footprint?
+
 
 # Graphs
 
-7) Find the slope and y-intercept of these graphs
+6) Find the slope and y-intercept of these graphs
 
 ```{r}
 x=seq(-5,5)
@@ -106,7 +112,7 @@ cowplot::plot_grid(p1,p2,p3,p4,labels=c("A","B","C","D"))
 
 ```
 
-8) The growth of sharks are modeled from Von Bertalanffy curves. Scalloped hammerhead sharks in the Atlantic were found to have growth curves that follow the chart below.
+7) The growth of sharks are modeled from Von Bertalanffy curves. Scalloped hammerhead sharks in the Atlantic were found to have growth curves that follow the chart below.
 
 ```{r}
 vb<-function(a,l,k,t0){
