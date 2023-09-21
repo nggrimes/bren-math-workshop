@@ -216,7 +216,7 @@ $$
 \frac{d}{dx}e^x=e^x
 $$
 .pull-left[
-```{r,fig.align='center',out.width="95%"}
+```{r,fig.align='center',out.width="75%"}
 x=seq(-1,1,by=0.01)
 y=exp(x)
 
@@ -230,7 +230,9 @@ ggplot()+
 
 .pull-right[The derivative at every point on this line is simply f(x) 
 
-When x=0, $\frac{d}{dx(0)}=1]$
+When x=0, $\frac{d}{dx(0)}=1$
+
+]
 
 ---
 
