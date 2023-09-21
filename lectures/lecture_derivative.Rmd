@@ -183,9 +183,63 @@ $$
 
 # An aside on exponents
 
+Base $e$ exponents are unique and useful in many math applications
+
+Originally derived to solve compounding interest rates problems in 1683 by Bernoulli
+
+
+.pull-left[
+It's a constant $e\approx 2.72$
+
+Comes from this limit 
+]
+
+.pull-right[
+Follows normal power properties
+
+$e^{x+y}=e^x\cdot e^y$
+
+$e^{-x}=\frac{1}{e^x}$
+
+$e^{x-y}=\frac{e^x}{e^y}$
+
+$e^{rx}=(e^x)^r$
+]
+
+
 ---
 
 # Derivatives of Exponents
+
+$$
+\large
+\frac{d}{dx}e^x=e^x
+$$
+.pull-left[
+```{r,fig.align='center',out.width="35%"}
+x=seq(-1,1,by=0.01)
+y=exp(x)
+
+ggplot()+
+  geom_line(aes(x=x,y=y),color="black",linewidth=3)+
+  theme_classic()+
+  labs(x="",y="",title=bquote(e^x))+
+  theme(text=element_text(size=28))
+```
+]
+
+.pull-right[The derivative at every point on this line is simply f(x) 
+
+When x=0, $\frac{d}{dx(0)}=1]
+
+---
+
+# Derivatives of Exponents
+
+```{r,fig.align='center',out.width="25%"}
+knitr::include_graphics("img/exp_comic.png")
+```
+
 
 ---
 
