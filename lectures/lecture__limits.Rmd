@@ -68,7 +68,7 @@ library(tidyverse)
 
 How did everyone feel about the problem set?
 
-Anything remaining confusing?
+Anything still confusing?
 
 Discuss with Team
 
@@ -661,7 +661,7 @@ class: title-slide-section-blue, middle, center
 
 1) As a team, list 5 fields of environmental science where studying the rate of change and derivatives would be important
 
-2) Which rule should you use to take these derivatives?
+2) Which rules should you use to take these derivatives?
 
 $$
 \begin{align}

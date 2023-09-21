@@ -1,0 +1,57 @@
+---
+title: "Class Data"
+execute: 
+  echo: true
+  warning: false
+  message: false
+  
+format: 
+  html:
+    code-fold: true
+---
+
+```{r}
+library(tidyverse)
+library(googlesheets4)
+library(knitr)
+library(kableExtra)
+```
+
+
+
+```{r}
+data<-read_sheet("https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810") %>% 
+  janitor::clean_names() %>% 
+  select(-timestamp)
+```
+
+
+```{r}
+
+colnames(data)<-c("specialization","major","math_level","use","relationship","name")
+
+ggplot(data=data)+
+  geom_bar(aes(major))+
+  theme_classic()+
+  labs(x="",y="")
+
+ggplot(data=data)+
+  geom_bar(aes(specialization))+
+  theme_classic()+
+  labs(x="",y="")
+
+ggplot(data=data)+
+  geom_bar(aes(math_level))+
+  theme_classic()+
+  labs(x="",y="")+
+  scale_x_discrete(labels=c("Algebra","Calculus 1","Calculus 2","Calculus 3","Trigonometry"))
+
+
+data %>% 
+  mutate(name=fct_relevel(use,"Less than a year","1-2 years ago","3-5 years ago","Not since the dark times (5+ years)")) %>% 
+ggplot()+
+  geom_bar(aes(use))+
+  theme_classic()+
+  labs(x="",y="")
+```
+

@@ -522,8 +522,8 @@ $$
 $$
 \begin{align}
 (3x-6)(2x+1) \\
-6x^2-3x-12x-6 \\
-6x^2-15x-6
+6x^2+3x-12x-6 \\
+6x^2-9x-6
 \end{align}
 $$
 
@@ -785,7 +785,7 @@ You're team measured the concentrations of pesticides in a lake exposed to agric
 
 $$
 \begin{aligned}
-&y=(2t-8)(t+2) \\
+&y=(8-2t)(t+2) \\
 &\text{Where } y \text{ is pesticde concentration in ppb} \\
 &\text{and } t \text{ is time in years}
 \end{aligned}
