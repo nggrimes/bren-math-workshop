@@ -1,0 +1,77 @@
+---
+title: "Class Response Breakdown"
+author: "Nathaniel Grimes"
+date: "2023-09-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE,message=FALSE)
+
+library(tidyverse)
+library(googlesheets4)
+library(knitr)
+library(kableExtra)
+```
+
+```{r}
+data<-read_sheet("https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810") %>% 
+  janitor::clean_names() %>% 
+  select(-timestamp)
+```
+
+```{r}
+colnames(data)<-c("specialization","major","math_level","use","relationship","name")
+
+ggplot(data=data)+
+  geom_bar(aes(major),fill="#003660",color="black",size=1)+
+  theme_classic()+
+  labs(x="",y="",title="Major in Undergrad")+
+  scale_y_continuous(expand = c(0, 0))+
+  scale_x_discrete(labels=c("Business","Computer\nScience","Economics","Environmental\nScience","Humanities\n(History,\nLiterature, Art)","Political Science","STEM"))+
+  theme(axis.text.x=element_text(size=10))
+
+ggplot(data=data)+
+  geom_bar(aes(specialization),fill="#09847A",color="black",size=1)+
+  theme_classic()+
+  labs(x="",y="",title="First Choice of Bren Specialization")+
+  scale_x_discrete(labels=c("Business and\nSustainability","Coastal\nResources\nand Management","Conservation\nPlanning","Energy and\nClimate","Environmental\nPolicy","Pollution\nPrevention\nand Remediation","Water Resources\nManagement"))+
+  scale_y_continuous(expand = c(0, 0))+
+  theme(axis.text.x=element_text(size=10))
+
+
+data %>% 
+  mutate(name=fct_relevel(math_level,"Algebra","Trigonometry","Calculus 1","Calculus 2","Calculus 3 and beyond (Diff eq, real analysis, if you know what those are click this option)")) %>% 
+ggplot()+
+  geom_bar(aes(name),fill="#6D7D33",color="black",size=1)+
+  theme_classic()+
+  labs(x="",y="",title="Highest Previous Math Class")+
+  scale_x_discrete(labels=c("Algebra","Trigonometry","Calculus 1","Calculus 2","Calculus 3"))+
+  scale_y_continuous(expand = c(0, 0))+
+  theme(axis.text.x=element_text(size=10))
+
+
+data %>% 
+  mutate(use=as.factor(use)) %>% 
+  mutate(name=fct_relevel(use,"Less than a year","1-2 years ago","3-5 years ago","Not since the dark times (5+ years)")) %>% 
+ggplot()+
+  geom_bar(aes(name),fill="#EF5645",color="black",size=1)+
+  theme_classic()+
+  labs(x="",y="",title="Last time Math was used to solve a problem")+
+  scale_y_continuous(expand = c(0, 0))+
+  scale_x_discrete(labels=c("Less than a year","1-2 years ago","3-5 years ago","Not since the dark times\n(5+ years)"))+
+  theme(axis.text.x=element_text(size=10))
+  
+
+data %>%
+  mutate(name=fct_relevel(relationship,"My mortal enemy","Your crazy, high key racist uncle you have to invite to Thanksgiving","The friend of a friend who's name you can never remember","Respectful co-worker you can have a beer with","My best friend!")) %>% 
+ggplot()+
+  geom_bar(aes(name),fill="#FEBC11",color="black",size=1)+
+  theme_classic()+
+  labs(x="",y="",title="Relationship with Math")+
+  scale_x_discrete(labels=c("My mortal enemy","Your crazy\nhigh key racist\nuncle you have\nto invite to\nThanksgiving","The friend of\na friend who's\nname you can\nnever remember","Respectful co-worker\nyou can have a\nbeer with","My best friend!"))+
+  scale_y_continuous(expand = c(0, 0)) +
+  theme(axis.text.x=element_text(size=10))
+  
+```
+
