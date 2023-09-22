@@ -167,6 +167,8 @@ tdf=tdf[1:groups,]
 
 tdf$teammate_add<-add_vec
 
+tdf$team_num=seq(1,length(add_vec))
+
 
 
 ```
@@ -174,5 +176,11 @@ tdf$teammate_add<-add_vec
 ```{r}
 kable(tdf) %>% 
   kable_styling()
+```
+
+
+
+```{r}
+
 ```
 

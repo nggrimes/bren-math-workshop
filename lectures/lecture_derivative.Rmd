@@ -192,6 +192,10 @@ Originally derived to solve compounding interest rates problems in 1683 by Berno
 It's a constant $e\approx 2.72$
 
 Comes from this limit 
+
+$$
+\lim_{n\to \infty}(1+\frac{1}{n})^n
+$$
 ]
 
 .pull-right[
@@ -439,7 +443,7 @@ Why is this model so wrong?
 # It isn't wrong, but not predictive out of sample
 .pull-left[
 ```{r,fig.align='center',fig.cap="Figure 2 from Dochy 2015",out.width="85%"}
-knitr::include_graphics("img/dochy.png")
+knitr::include_graphics("img/dochy.PNG")
 ```
 
 ]
@@ -492,7 +496,7 @@ $$
 # Graphical demonstration of Increasing vs Decreasing
 
 ```{r,fig.align='center',out.width="80%"}
-knitr::include_graphics("img/increase.png")
+knitr::include_graphics("img/increase.PNG")
 ```
 
 Helps us find maximums or minimums

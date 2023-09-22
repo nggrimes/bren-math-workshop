@@ -90,24 +90,48 @@ $$
 
 \textcolor{blue}{This function is broken down into disparate pieces. To connect them an make them continuous we need both to approach the same value at x. Otherwise they will not converge. First we can evaluate the bottom part at x=3, then adjust b to get the top part to also equal that same value.}
 
-$$
-\begin{aligned}
+
+\begin{align}
 -2(-3)-9=-3\\
 b(-3)^2-\frac{3}{2}(-3)-5=-3\\
 9b+\frac{9}{2}=2\\
 9b=\frac{-5}{2}\\
 b=\frac{-5}{18}
-\end{aligned}
-$$
+\end{align}
+
 
 
 4) Calculate the derivative of the following functions then evaluate at the given x:
 
 a) $2x^2+4$ at $x=-3$
 
-b) x^4-5x^3+x-5 at $x=5$
+
+\begin{align}
+2x^2+4\\
+\frac{d}{dx}=4x\\
+\frac{d}{dx(3)}=4(-3)=12
+\end{align}
+
+
+b) $x^4-5x^3+x-5$ at $x=5$
+
+
+\begin{align}
+x^4-5x^3+x-5 \\
+\frac{d}{dx}=4x^3-15x^2+1 \\
+4(5)^3-15(5)^2+1=126
+\end{align}
+
 
 c) $\frac{5}{x^2}$ at $x=2$
+
+
+\begin{align}
+\frac{5}{x^2}\\
+\frac{d}{dx}=-10x^{-3}\\
+-10(2)^{-3}=1.25
+\end{align}
+
 
 \pagebreak
 
@@ -129,4 +153,8 @@ ggplot()+
   
 ```
 
+\textcolor{blue}{Using rise over run we can take two points on the tangent line to find the slope. The tangent line provides the slope or instaneous rate of change at single point along the curve. Therefore the slope of the tangent line is the derivative. In this graph $\frac{dy}{dx}=2$ is unique at only x=2. However in other curves, such as sine waves or higher order polynomials, it is possible for different tangent lines to have the same slope}
 
+$$
+slope=\frac{1--1}{2-1}=\frac{2}{1}
+$$

@@ -697,13 +697,13 @@ p1+theme(legend.position = "none")
 ---
 
 ```{r echo=FALSE,fig.align='center',out.width="50%"}
-knitr::include_graphics("img/headline.png")
+knitr::include_graphics("img/headline.PNG")
 ```
 
 --
 
 ```{r echo=FALSE,fig.align='center',out.width="59%"}
-knitr::include_graphics("img/worm.png")
+knitr::include_graphics("img/worm.PNG")
 ```
 ---
 
@@ -740,7 +740,7 @@ Vertical Slope: m is undefined
 .bold[Rise over Run]
 
 ```{r echo=FALSE,fig.align='center',out.width="80%"}
-knitr::include_graphics("img/slope.png")
+knitr::include_graphics("img/slope.PNG")
 ```
 
 ]
@@ -750,7 +750,7 @@ knitr::include_graphics("img/slope.png")
 # Slope represents rate of change 
 
 ```{r echo=FALSE,fig.align='center',out.width="80%"}
-knitr::include_graphics("img/loa.png")
+knitr::include_graphics("img/loa.PNG")
 ```
 
 
@@ -770,7 +770,7 @@ Instantaneous leads us to Calculus
 ]
 
 ```{r echo=FALSE,fig.align='center',out.width="50%"}
-knitr::include_graphics("img/trex.png")
+knitr::include_graphics("img/trex.PNG")
 ```
 
 ---
