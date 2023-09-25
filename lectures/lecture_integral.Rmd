@@ -404,7 +404,7 @@ knitr::include_graphics("img/c.png")
 
 - Solve Differential Equations
 
-    - i.e $\frac{dy}{dx}=2x-4
+    - i.e $\frac{dy}{dx}=2x-4$
     
     - Logistic Growth is one example
 
