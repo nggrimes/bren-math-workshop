@@ -57,15 +57,17 @@ a) $f'(x)=0$
     
 b) $f'(x)>0$
     
-\textcolor{red}{$-\infty<x<-2$ and $0<x<\infty$}
+\textcolor{blue}{$-2<x<0$}
     
 c) $f'(x)<0$
+
+\textcolor{red}{$-\infty<x<-2$ and $0<x<\infty$}
     
-\textcolor{blue}{$-2<x<0$}
     
 d) [Bonus] $f''(x)>0$
     
 \textcolor{purple}{We need to look for inflection points in the graph where it starts accelerating more or less. This occurs at $x=-1$. To the left the rate of deceleration is negative so $f''(x)<0$ and the to the right $f''(x)>0$}
+
     
 e) [Bonus] $f''(x)<0$
     
@@ -96,7 +98,7 @@ ggplot()+
 a) $f(x)=\exp^{x^2+3}$
 
 \begin{align}
-f(x)&=e^{x^2_3}\\
+f(x)&=e^{x^2+3}\\
 f'(x)&=2x e^{x^2+3}
 \end{align}
     
