@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Bren Calculus Workshop</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nathaniel Grimes" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/chocolate-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding/datatables.js"></script>
+    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
+    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link rel="stylesheet" href="ucsb.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Bren Calculus Workshop
+]
+.subtitle[
+## Introduction and Algebra Review
+]
+.author[
+### Nathaniel Grimes
+]
+.institute[
+### Bren School of Environmental Science &amp; Management
+]
+.institute[
+### University of California at Santa Barbara
+]
+.date[
+### 9/22/2023
+]
+
+---
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+.xe-scribble__tools.minimized {
+  display: none;
+}
+
+.remark-slide-content {
+  font-size: 28px;
+  padding: 20px 80px 20px 80px;
+}
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+.remark-code {
+  font-size: 24px;
+}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+
+.small{
+font-size: 22px;
+}
+
+.mjx-chtml{ font-size: 100% !important; }
+
+.small-math .mjx-chtml{ font-size: 85%; }
+&lt;/style&gt;
+
+
+
+
+# Please fill out this survery
+
+.center[![](img/frame.png)]
+
+[Or you can click on this link](https://forms.gle/BivhWDG7oaAefH6K6)
+
+---
+
+# Workshop Objectives
+
+&lt;img src="img/confused.gif" width="30%" style="display: block; margin: auto;" /&gt;
+
+1. Shake off the math/schoolwork dust
+
+2. Equip students with the math skills to succeed in all Bren Courses
+
+3. Learn how valuable math is to environmental science
+
+4. Build collaborative environment crucial at Bren
+
+
+---
+
+# We will be using Team-based learning 
+
+- Science and policy are done collaboratively
+
+- TBL shows better learning outcomes than traditional lecturing
+
+  - [In Math](https://www.tandfonline.com/doi/pdf/10.1080/10511970.2018.1542417?casa_token=We71OsRHNuQAAAAA:U4I567tQynbXcFHplLpIkkamtpfUf1GqCgIKBP453cVdHJ8b3mP-yymXkVNOc4JJ4aZfJxpGvU766Q)
+  
+  - [For Women especially](https://www.tandfonline.com/doi/pdf/10.1080/00220485.2017.1397571?casa_token=d394sBXFFSEAAAAA:Sa68G6KKjBzxy6aD9KBnRH7W5xChBl_PYfy-Yeck2YlOCoDOxp903xu_6S9yTpFTwqVtugWK23im2Q)
+  
+  - [Higher engagement](https://www.lifescied.org/doi/pdf/10.1187/cbe.17-03-0055)
+  
+- We'll be doing a TBL Lite*, because I know orientation week is busy and school hasn't officially started
+
+  - Keep extra pre-class work and assessments to a minimum
+  
+---
+  
+# Team formation
+
+## Live coding demonstration
+
+
+
+---
+
+# Team expectations
+
+## 1) Support and encourage each other
+
+## 2) Communicate between all group members
+
+## 3) Learn by teaching
+
+## 4) Complete in class team assessments
+
+### Out of class feel free to work with anyone in the class
+
+---
+
+class: title-slide-section-gold, middle, center
+
+# Math in Environmental Science
+
+---
+
+# Describe to your team what is the purpose of environmental science?
+
+# How would you go about solving environmental problems?
+
+---
+
+## Math is an important tool in Environmental Science
+
+.pull-left[
+.center[.bold[Math to investigate]]
+
+Math is science's foundation for finding evidence
+
+Math verifies positive statements 
+  - (C02 concentrations increase by X amount for every Y amount of electricity used)
+]
+
+.pull-right[
+.center[.bold[Math to communicate]]
+
+Can only communicate what you understand
+
+Policy people need to know how to support their arguments
+
+Weaknesses in methods can be identified by understanding the mathematical foundation studies are built on 
+]
+
+---
+
+# Math at Bren
+
+.pull-left[
+.center[.bold[In classes:]]
+
+- ESM 201 Lokta-Volterra Models 
+$$
+`\begin{align}
+\frac{dN_1}{dt}&amp;=r_1N_1\left(\frac{K_1-N_1-\alpha N_2}{K_1}\right)\\
+\frac{dN_2}{dt}&amp;=r_2N_2\left(\frac{K_2-N_2-\beta N_1}{K_2}\right)
+\end{align}`
+$$
+
+- ESM 222 Groundwater transport of absorbed contaminant
+$$
+\frac{\partial C}{\partial t}=\left(\frac{D}{R}\frac{\partial^2t}{\partial x^2}\right)-\left(\frac{v}{R}\frac{\partial C}{\partial x}\right)-\frac{k}{R}C
+$$
+]
+
+.pull-right[
+.center[.bold[In Research:]]
+
+[Applying Portfolio Theory (A mix of calculus and stochastic linear algebra) to salmon stocks (MESM GP)](https://bren.ucsb.edu/projects/applying-portfolio-theory-improve-spatial-recovery-planning-pacific-salmon)
+
+[We might be underestimating social cost of carbon because of adaptation (Dr. Jeon Bren PhD)](https://woongchanjeon.com/research/WJeon_JMP.pdf)
+
+.gold[My own research in impacts from fishery insurance programs]
+
+]
+
+---
+class: title-slide-section-blue, middle, center
+
+# Algebra Review
+
+
+---
+
+# Rules of Algebra
+
+1. Never change an equation, we rewrite into more useful forms
+
+2. Manipulate BOTH sides of an equation with the SAME THING
+
+3. Order of Operations (aka PEDMAS)
+
+---
+
+# (P)aranthesis (E)xponents (D)ivide (M)ultiply (A)dd (S)ubtract [PEDMAS]
+
+.center[
+&lt;img src="img/pedmas_meme.webp" width="40%" /&gt;
+]
+
+---
+
+# PEDMAS important for what order to manipulate equations
+
+$$
+4*(y-4)+(x+1)^2=z
+$$
+If I give you x and y, how would you solve this equation?
+
+---
+
+# Often times we want flexible equations 
+
+Prices are important in economics, but not always available for environmental goods.
+
+.center[.bold[How we get prices if we know quantity?]]
+
+$$
+\require{cancel}
+`\begin{aligned}
+Q&amp;=\frac{(400-P)}{80} &amp;\text{Isolate P in terms of Q} \\
+\end{aligned}`
+$$
+
+
+---
+
+# Often times we want flexible equations 
+
+Prices are important in economics, but not always available for environmental goods.
+
+.center[.bold[How we get prices if we know quantity?]]
+
+$$
+\require{cancel}
+`\begin{aligned}
+Q&amp;=\frac{(400-P)}{80} &amp;\text{Isolate P in terms of Q} \\
+80Q&amp;=\frac{(400-P)\cancel{80}}{\cancel{80}}  &amp;\text{ Multiply both sides by 80} \\
+80Q-400&amp;=\cancel{400}-\cancel{400} -P &amp;\text{ Subtract both sides by 400} \\
+-1(80Q-400)&amp;=-P(-1) &amp;\text{Multiply both sides by -1} \\
+400-80Q&amp;=P  &amp;\text{Flip terms for simplicity}
+\end{aligned}`
+$$
+
+
+---
+
+# It's easy to make mistakes while doing algebra. Practice makes perfect
+
+Solve all in terms of x
+
+$$
+3x+2=10x-12
+$$
+
+$$
+4-3(2x+1)=8-\frac{3x}{2}
+$$
+$$
+3(x+7a)-5=b+2(c-4x)
+$$
+---
+
+# Practice solutions
+.pull-left[
+
+
+$$
+\small
+`\begin{aligned}
+3x+2&amp;=10x-12 \\
+3x+2+12&amp;=10x-12(+12) \\
+3x-3x+14&amp;=10x-3x \\
+14&amp;=7x \\
+x&amp;=2
+\end{aligned}`
+$$
+$$
+\small
+`\begin{aligned}
+4-3(2x+1)&amp;=8-\frac{3x}{2}\\
+4-3-6x&amp;=8-\frac{3x}{2} \\
+1-6x&amp;=8-\frac{3x}{2} \\
+2-12x&amp;=16-3x \\
+-9x&amp;=14 \\
+x&amp;=\frac{-14}{9}\\
+\end{aligned}`
+$$
+
+]
+.pull-right[
+
+$$
+\small
+`\begin{aligned}
+3(x+7a)-5&amp;=b+2(c-4x)\\
+3x+21a-5&amp;=b+2c-8x \\
+11x+21a-5&amp;=b+2c \\
+11x&amp;=5+b+2c-21a\\
+x&amp;=\frac{5+b+2c-21a}{11}
+\end{aligned}`
+$$
+
+]
+
+---
+
+# Exponents make algebra WAY tougher
+
+.pull-left[
+
+`\(x^n=x*x*x*x... (\text{n-times})\)`
+
+Many environmental variables follow exponential formulas like decay and growth
+
+You might find yourself trying to solve equations like `\(x^{\frac{3}{4}}=3x^{\frac{5}{3}}\)`
+
+Use the same principles of algebra and the properties of the right to manipulate
+]
+.pull-right[
+Properties and rules to help manipulate
+
+$$
+`\begin{aligned}
+x^0&amp;=1 &amp; x\ne0 \\
+x^{-n}&amp;=\frac{1}{x^n} &amp;x\ne0 \\
+(\sqrt[n]{x}=a)&amp;\to x=a^n \\
+x^\frac{1}{n}&amp;=\sqrt[n]{x}\\
+x^\frac{m}{n}&amp;=(x^{\frac{1}{n}})^m=(\sqrt[n]{x})^m
+\end{aligned}`
+$$
+]
+---
+# Polynomials
+
+$$
+\large
+`\begin{align}
+a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0
+\end{align}`
+$$
+
+Really useful in fitting data in regressions
+
+.big[.center[*Fundamental Theorem of Algebra:*]]
+
+.big[.bold[Every nth degree polynomial has exactly n zeroes (solutions)]]
+
+---
+# Fundamental Theorem of Alegebra helps us solve for unknowns
+
+Often times we look for solutions when equations equal zero
+
+Interesting properties at zero or the difference between two equations
+
+Comes from calculus maximization problems (covered in day 3)
+
+---
+
+# You were already finding zeroes!
+
+This is just a 1st degree polynomial. How many solutions did it have?
+$$
+3x+2=10x-12
+$$
+
+Finding nth degree polynomials zeros are harder
+
+Focus on 2nd degree polynomials
+
+
+
+---
+# (F)irst (O)utside (I)nside (L)ast [FOIL]
+
+Second degree polynomials can be written as a multiplication of their "roots" aka solutions
+
+$$
+(x-4)(x+3)=0
+$$
+
+We can expand using FOIL!
+
+--
+
+### Multiply each term in the adjacent polynomial and add together
+
+$$
+`\begin{align*}
+\text{First}&amp;=x*x &amp; \text{Outside}&amp;=3x &amp; \text{Inside}&amp;=-4x &amp; \text{Last}&amp;=-12 \\
+x^2-&amp;x-12=0 &amp; &amp;\text{Add all terms together}
+\end{align*}`
+$$
+
+---
+# What do I mean by roots or solutions?
+
+
+What happens if x=4 or x=-3 in `\((x-4)(x+3)\)`
+
+--
+
+Try the same thing with `\(x^2-x-12\)`
+
+--
+
+The only way to get `\(x^2-x-12=0\)` is for x to either be 4 or -3
+
+--
+
+4 and -3 are said the be the roots of the equation
+
+---
+# Quadratic Formula solves 2nd degree polynomials
+
+.bold[For any second degree polynomial]
+
+$$
+ax^2+bx+c=0
+$$
+
+.bold[The solution to x=0 can be found using the quadratic formula]
+
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+$$
+---
+class: title-slide-section-blue, middle, center
+
+# Team Assessment
+
+---
+
+1) Identify which numbers you should plug into which variable of the quadratic formula (e.g. a,b,c)
+
+$$
+4x^2+x-14=0
+$$
+
+
+2) Identify which numbers you should plug into which variable of the quadratic formula (e.g. a,b,c)
+
+
+$$
+256-\sqrt{44} x^2+.23x
+$$
+
+3) What happens if `\(b^2-4ac\)` is negative?
+
+4) Expand `\((3x-6)(2x+1)\)`
+
+
+---
+# Solutions
+
+$$
+4x^2+x-14=0
+$$
+
+
+$$
+`\begin{aligned}
+a=4 \\
+b=1 \\
+c=-14
+\end{aligned}`
+$$
+
+---
+
+# Solution
+
+$$
+256-\sqrt{44} x^2+.23x
+$$
+
+
+$$
+`\begin{aligned}
+a=\sqrt{44} \\
+b=.23 \\
+c=256
+\end{aligned}`
+$$
+.blue[This will probably be a nasty calculation, but that is what calculators and computers are for. The order does not matter, only that the a corresponds to the square term, the b to the 1st degree term, and the c to the constant]
+
+
+---
+
+# Solution
+
+## 3) What happens if `\(b^2-4ac\)` is negative in the quadratic formula?
+
+.blue[There are no real solutions, but imaginary solutions. Can be useful (saddle path solutions, but that's for another class)]
+
+---
+# Solution
+
+$$
+`\begin{align}
+(3x-6)(2x+1) \\
+6x^2+3x-12x-6 \\
+6x^2-9x-6
+\end{align}`
+$$
+
+---
+class: title-slide-section-blue, middle, center
+
+# Graphs
+
+---
+# Graphing brings visual connection to math
+
+.center[.bold[Which looks better and is easier to understand?]]
+.pull-left[
+.tiny[
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0177a6cb6e427d5b426c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0177a6cb6e427d5b426c">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+]
+
+]
+
+.pull-right[
+.tiny[
+&lt;img src="lecture_algebra_files/figure-html/unnamed-chunk-6-1.png" width="90%" /&gt;
+]
+]
+
+---
+
+# How to use graphs
+
+.pull-left[
+Graphs move in a rectangular coordinate system with two dimensions (axes)
+
+- x - axis (horizontal)
+
+- y- axis (vertical)
+
+- Axis units must be defined
+
+We use point pairs to place data
+
+- (.bold[X],.bold[Y])
+
+- Where would (2,-1) go on the graph?
+]
+
+.pull-right[
+&lt;img src="img/cart.png" width="1067" /&gt;
+
+]
+
+---
+
+# Graph series of points to make lines
+
+.pull-left[
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d141ee2c96fdb28fe3bb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d141ee2c96fdb28fe3bb">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10","11"],[0,1,2,3,4,5,6,7,8,9,10],[-0.94,1.28,0.75,5.39,4.49,3.77,6.73,8.11,8.86,8.54,9.06]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n      <th>y<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":6,"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[6,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+]
+
+.pull-right[
+![](lecture_algebra_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+]
+
+---
+
+# Most functions can be shown on graphs
+
+.pull-left[
+
+- `\(\color{green}{y=sin(3x+2)}\)`
+
+- `\(\color{red}{y=0.5x^3+x^2-5x+2}\)`
+
+- `\(\color{blue}{y=0.85x+0.44}\)`
+]
+
+.pull-right[
+
+
+
+
+&lt;img src="lecture_algebra_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Two key ingredients to graphs
+
+.pull-left[
+
+1) Intercepts
+
+- X-intercept
+
+  - Where does the graph intersect the x-axis? (x,0)
+    
+- y-intercept
+
+    - Where does  the graph intersect the y-axis? (0,y)
+    
+2) Slope of lines
+
+- How quickly is the graph changing?
+
+]
+
+.pull-right[
+.center[What are the intercepts of the polynomial function in red?]
+
+&lt;img src="lecture_algebra_files/figure-html/unnamed-chunk-12-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+&lt;img src="img/headline.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+--
+
+&lt;img src="img/worm.PNG" width="59%" style="display: block; margin: auto;" /&gt;
+---
+
+# Slope-Intercept Form
+
+Easiest model to describe linear relationship between two variables
+
+$$
+\huge
+`\begin{align}
+\underbrace{y}_{\text{y-variable}}=\overbrace{m}^{\text{Slope}}\underbrace{x}_{\text{x-variable}}+\overbrace{b}^{\text{y intercept}}
+\end{align}`
+$$
+
+---
+
+# Definition of Slope
+
+.pull-left[
+Vertical Change per unit of Horizontal Change
+
+$$
+m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}
+$$
+
+Horizontal Slope: m=0
+
+Vertical Slope: m is undefined
+
+]
+
+.pull-right[
+
+.bold[Rise over Run]
+
+&lt;img src="img/slope.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Slope represents rate of change 
+
+&lt;img src="img/loa.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Slope can be *average* or *instantaneous*
+
+.pull-left[
+Rise over run can always be used to find average rate of change between two parts of a graph
+
+
+]
+
+.pull-right[
+Instantaneous leads us to Calculus
+
+]
+
+&lt;img src="img/trex.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+class: title-slide-section-blue, middle, center
+
+# Team Assessment
+
+---
+class: small
+
+You're team measured the concentrations of pesticides in a lake exposed to agricultural runoff. The intern in charge of finishing the calculations ran off for the weekend leaving you all to finish their work. They left behind the following equation describing the total amount of pesticides in the lake if runoff is stopped from the farm by a new policy incentive reducing pesticides use:
+
+$$
+`\begin{aligned}
+&amp;y=(8-2t)(t+2) \\
+&amp;\text{Where } y \text{ is pesticde concentration in ppb} \\
+&amp;\text{and } t \text{ is time in years}
+\end{aligned}`
+$$
+
+.small[Work with your team to discuss conceptually how you would solve the following tasks.
+
+1) Write out the intern's work in a more useful equation
+
+2) How long will it take for the pesticide concentration in the lake to reach zero? Since the equation is a polynomial describe why one solution is more applicable than the other.
+
+3) Present your findings (Choose between a graph or table)
+
+4) What is the average change in concentration from year 0 to year 4?
+
+5) Explain to your client why concentrations might behave the way they were modeled.
+]
+
+---
+
+# Solutions
+
+## 1) Solution
+
+Let's FOIL out the equation so it becomes easier to graph.
+
+$$
+`\begin{aligned}
+y&amp;=(-2t+8)(t+2) \\
+y&amp;=\overbrace{-2t^2}^{\text{First}}-\overbrace{4t}^{\text{Outside}}+\overbrace{8t}^{\text{Inside}}+\overbrace{16}^{\text{Last}}\\
+y&amp;=-2t^2+4t+16
+\end{aligned}`
+$$
+---
+
+## 2) Solution
+
+Two possible ways to answer:
+
+.pull-left[.center[Use the Quadratic Formula]
+
+$$
+`\begin{aligned}
+0&amp;=-2t^2+4t+16 \\
+0&amp;=\frac{-4\pm\sqrt{4^2-4(-2)(16)}}{2(-2)}\\
+0&amp;=\frac{-4\pm\sqrt{16+128}}{-4} \\
+&amp;t=4\text{, } t=-2
+\end{aligned}`
+$$
+]
+
+.pull-right[
+.center[Use the factors]
+$$
+`\begin{aligned}
+2t-8=0 \\
+t=\frac{8}{2}\\
+t=4
+\end{aligned}`
+$$
+
+$$
+`\begin{aligned}
+t+2=0 \\
+t=-2
+\end{aligned}`
+$$
+
+]
+---
+
+## 3) Solution
+
+.pull-left[
+
+&lt;img src="lecture_algebra_files/figure-html/unnamed-chunk-18-1.png" width="90%" /&gt;
+]
+
+.pull-right[
+ .tiny[
+
+```r
+t=seq(-2,4)
+y=-2*t^2+4*t+16
+df&lt;-data.frame(t=t,y=y)
+p&lt;-df %&gt;% 
+  ggplot(aes(x=t,y=y))+
+  geom_line(color="#003660",linewidth=3)+
+  labs(x="Years",y="Pesticide Concentration")+
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0))+
+  theme_classic()+
+  theme(text = element_text(size = 28)) 
+
+p
+```
+ 
+ ]
+]
+---
+
+## 4) Solution
+
+.pull-left[
+![](lecture_algebra_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+
+]
+
+
+.pull-right[
+.tiny[
+
+```r
+p2&lt;-df %&gt;% 
+  filter(t&gt;=0) %&gt;% 
+  ggplot(aes(x=t,y=y))+
+  geom_line(color="#003660",linewidth=3)+
+  labs(x="Years",y="Pesticide Concentration")+
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0))+
+  annotate("segment",x=0,xend=4,y=16,yend=0,color="#FEBC11",linewidth=2)+
+  theme_classic()+
+  theme(text = element_text(size = 28)) 
+```
+Use rise over run:
+
+$$
+\frac{\Delta y}{\Delta x}=\frac{0-16}{4-0}=-4
+$$
+Pesticides are removed from the lake at an average rate of 4 ppb per year
+
+]]
+
+
+
+
+---
+
+## 5) Solution
+
+.pull-left[
+
+![](lecture_algebra_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+Pesticide concentrations might initially increase in the lake from residual particles in the soil being washed into the lake. Then a mixture microbial activity and other chemical process reduce the pesticides to more inert components (You will learn the actual answer in ESM 202)
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

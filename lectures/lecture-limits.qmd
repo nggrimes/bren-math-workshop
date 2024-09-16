@@ -20,7 +20,7 @@ embed-resources: true
 
 [Nathaniel Grimes]{.body-text-l .center-text .blue-text}
 
-[Bren School of Environmental Science]{.center-text .body-text-m .blue-text}
+[Bren School of Environmental Science & Management]{.center-text .body-text-m .blue-text}
 
 [**Last updated:** `r format(Sys.time(), '%b %d, %Y')`]{.body-text-s .blue-text}
 

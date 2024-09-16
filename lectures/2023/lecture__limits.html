@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Bren Calculus Workshop</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nathaniel Grimes" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/chocolate-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <link rel="stylesheet" href="ucsb.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Bren Calculus Workshop
+]
+.subtitle[
+## Limits and Intro to Derivative
+]
+.author[
+### Nathaniel Grimes
+]
+.institute[
+### Bren School of Environmental Science &amp; Management
+]
+.institute[
+### University of California at Santa Barbara
+]
+.date[
+### 9/22/2023
+]
+
+---
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+.xe-scribble__tools.minimized {
+  display: none;
+}
+
+.remark-slide-content {
+  font-size: 28px;
+  padding: 20px 80px 20px 80px;
+}
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+.remark-code {
+  font-size: 24px;
+}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+
+.small{
+font-size: 22px;
+}
+
+.mjx-chtml{ font-size: 100% !important; }
+
+.small-math .mjx-chtml{ font-size: 85%; }
+&lt;/style&gt;
+
+
+
+# Team Review
+
+How did everyone feel about the problem set?
+
+Anything still confusing?
+
+Discuss with Team
+
+---
+
+# Disclaimer
+
+Today is pretty concept heavy you might end up feeling like this:
+
+&lt;img src="https://media.giphy.com/media/lXu72d4iKwqek/giphy.gif" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+# Functions are like baking receipes
+
+.pull-left[
+
+- Assemble all your ingredients (independent variables like `\(x_1\)`, `\(x_2\)`)
+
+- Follow the instructions to mix, bake, and decorate (Instructions of function)
+
+- End up with final product (f(x))
+
+Typically we use the notation `\(f(x)=x\)`, but we can always use different representations like `\(g(x)=x\)` or `\(y=x\)`
+]
+
+.pull-right[
+&lt;img src="img/cake.png" width="2869" /&gt;
+
+]
+
+---
+
+# Properties of functions
+
+For each combination of independent variables, there is exactly one value of the dependent variable.
+
+- `\(f(1)\ne\{2,3\}\)` i.e. if I put 1 into the function I can't have both 2 and 3 come out
+
+- Vertical line test
+
+Functions can be continuous or discontinuous
+
+- Continuous: For every value of x, f(x) returns a number
+
+- Discontinuous: Parts are undefined
+
+---
+
+# Are these functions?
+
+.column-left[
+&lt;img src="img/dsqrt.PNG" width="385" /&gt;
+
+]
+
+.column-center[
+&lt;img src="img/para.PNG" width="327" /&gt;
+
+]
+
+.column-right[
+&lt;img src="img/circle.png" width="220%" /&gt;
+
+]
+
+---
+
+.pull-left[
+# Continuous
+
+&lt;img src="img/cont.png" width="300" /&gt;
+
+Most function we deal with will be continuous
+]
+
+.pull-right[
+#Discontinuous
+
+&lt;img src="img/discont.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="img/tan.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+# Limits
+
+.bold[Definition:]
+
+*The value a function approaches as the input approaches a specific value*
+
+$$
+\large
+\lim_{x\to c} f(x)=L
+$$
+Verbally:
+
+"The limit of the function f(x) as x approaches the value c is L"
+
+---
+
+# Start with an example
+
+What is limit of `\(f(x)=2x^2-4\)` as x approaches 2?
+
+Strategy to solve: Evaluate f(x) at x that get closer and closer to 2
+
+--
+
+Quick sanity check, what should `\(f(2)=?\)`
+
+--
+
+`\(f(2)=4\)`
+
+---
+
+&lt;img src="img/lim4.PNG" width="90%" style="display: block; margin: auto;" /&gt;
+
+From both directions it looks like f(x) converges to 4
+
+$$
+\lim_{x\to c}(2x^2-4)=4
+$$
+
+---
+
+# Graphical Solution
+
+.pull-left[Finding limits of functions when f(x) is continuous at c is easy.
+
+$$
+\lim_{x\to c}f(x)=f(c)
+$$
+]
+
+.pull-right[
+&lt;img src="img/lim_graph_1.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+---
+
+# What happens with discontinuous functions?
+
+Try with your group the same approach for:
+
+$$
+\lim_{x\to 2}f(x)=\frac{|x-2|}{x-2}
+$$
+
+Hint: Start very close to 2 like 1.9 and 2.1
+
+--
+&lt;img src="img/limx2.PNG" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# We broke the universe
+
+Dividing by zero is impossible
+
+The function approaches different values from either side
+
+Therefore...
+
+--
+
+&lt;img src="img/limit.gif" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Clearer on the graph
+
+&lt;img src="img/lim_graph_2.PNG" width="40%" style="display: block; margin: auto;" /&gt;
+
+Technically the limit is "Undefined", because it does approach a finite value. Does not exist happens when the limits spiral off to infinity in both directions (tan graph)
+---
+
+# Defined Limit at an undefined point
+
+Discontinuous functions can still have limits
+
+Find the limit of `\(f(x)=x+1,x\ne 2\)` as x approaches 2
+
+--
+
+&lt;img src="img/lim3.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+.pull-left[
+&lt;img src="img/lim_graph_3.png" width="70%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+x=2 may not exist, but we can still find a limit because it consistently approaches 3 from both directions
+]
+
+---
+class: title-slide-section-blue, middle, center
+
+# Team Assessment
+
+---
+
+Work with you team to complete these tasks Part 1:
+
+
+1) Match the limit expression to the graph
+
+.column-left[
+
+A) 
+&lt;img src="img/lim_g_a.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+1) 
+
+$$
+\lim_{x\to3}g(x)=0
+$$
+
+
+]
+
+.column-center[
+
+
+B)
+&lt;img src="img/lim_g_b.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+2)
+
+$$
+\lim_{x\to-4}g(x)=3
+$$
+]
+
+.column-right[
+
+C)
+
+&lt;img src="img/lim_g_c.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+3)
+
+$$
+\lim_{x\to 3} g(x)= \text{DNE}
+$$
+]
+---
+
+Work with your team to complete these tasks Part 2:
+
+
+2) Can you think of examples where discontinuous function might exist in environmental science? 
+
+3) Choose as a team to draw an example of one of these statements
+
+- `\(\lim_{x\to 4^-} f(x)\)` and `\(\lim_{x\to 4^+}f(x)\)` are both infinite
+
+- `\(\lim_{x\to 3} f(x)=2\)`, but `\(f(3)=0\)`
+
+- `\(\lim_{x\to 5^-} f(x)=4\)` and `\(\lim_{x\to 5^+} f(x)=2\)`
+
+- `\(\lim_{x\to -3} f(x)=-5\)` but `\(f(-3)=-5\)`
+
+---
+
+class: title-slide-section-blue, middle, center
+
+# Introduction to Derivatives
+
+---
+
+# Putting it all together
+
+Recall average rate of change and instantaneous
+
+&lt;img src="img/trex.PNG" width="50%" style="display: block; margin: auto;" /&gt;
+
+Taking the average rate of change to a set limit will eventually converge to the instantaneous. 
+
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Walk Through Example
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Tangent Lines
+
+What if we set `\(\Delta x=0\)`? Then we would have a slope line that only touches at x=0.
+
+&lt;img src="img/tangent_line.png" width="548" style="display: block; margin: auto;" /&gt;
+
+These are tangent lines
+
+---
+
+# Put our example in math notation
+
+`$$\text{slope}=\frac{y_2-y_1}{x_2-x_1}$$`
+
+Choose a point along the function `\((x,f(x))\)`
+
+Choose a different point on the function `\(\Delta x\)` away `\((x+\Delta x,f(x+\Delta x))\)`
+
+Add these into the slope equation
+
+$$
+\text{slope}=\frac{f(x+\Delta x)-f(x)}{(x+\Delta x) -x}=\frac{f(x+\Delta x)-f(x)}{\Delta x}
+$$
+
+---
+
+# Derivative Definition
+
+$$
+\large
+f'(x)=\lim_{\Delta x \to 0}=\frac{f(x+\Delta x)-f(x)}{\Delta x}
+$$
+
+.center[Most common notation]
+
+$$
+\large
+f'(x)\text{, or }\frac{dy}{dx}
+$$
+
+---
+
+# Not all functions are differentiable
+
+.pull-left[
+
+- All differentiable functions are continuous, but not all continuous functions are differentiable
+
+- The absolute value function is one example `\(y=|x|\)`
+
+]
+
+.pull-right[
+
+&lt;img src="lecture__limits_files/figure-html/unnamed-chunk-28-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Calculus and Derivatives are the study of change
+
+&lt;img src="img/loa.PNG" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Rules for Differentiation
+
+.center[.bold[Constant Rule]]
+
+- If f is constant, then for all x, `\(f'(x)=0\)`
+
+$$
+`\begin{align}
+&amp;y=a &amp;\frac{dy}{dx}=0
+\end{align}`
+$$
+.center[.bold[Power Rule]]
+
+$$
+\frac{d}{dx}[x^n]
+=nx^{n-1}
+$$
+
+---
+
+# Examples
+
+$$
+`\begin{align}
+&amp;y=100 &amp; &amp;y=5x^5 &amp; &amp;y=\frac{1}{x^2}
+\end{align}`
+$$
+
+---
+
+# Rules for Differentiation
+
+.center[Sum and Difference Rules]
+
+$$
+`\begin{align}
+\frac{d}{dx}&amp;=[f(x)+g(x)]=f'(x)+g'(x) \\
+\frac{d}{dx}&amp;=[f(x)-g(x)]=f'(x)-g'(x)
+\end{align}`
+$$
+
+Looks really scary. All it says, if the function has pieces that are added or subtracted you can take the derivative of each individual piece.
+
+---
+
+# Example
+
+$$
+`\begin{align}
+&amp;y=x^2+8x+4 &amp; &amp;y=x^3-x^2+x-15
+\end{align}`
+$$
+
+---
+class: title-slide-section-blue, middle, center
+
+# Team Assessment
+
+---
+
+1) As a team, list 5 fields of environmental science where studying the rate of change and derivatives would be important
+
+2) Which rules should you use to take these derivatives?
+
+$$
+`\begin{align}
+\text{A)  }&amp; f(x)=3x^4 &amp;\text{B) }  y=4x^2+3x-16
+\end{align}`
+$$
+
+3) Find the derivatives of these functions
+
+$$
+`\begin{align}
+&amp;\text{A) } y=3x^2 &amp; &amp;\text{B) }h(x)=y=7x+4 &amp; &amp;\text{C) }g(y)=\sqrt{y}
+\end{align}`
+$$
+
+4) Discuss why derivatives need continuity. It might help to think about why some continuous functions don't have derivatives.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
