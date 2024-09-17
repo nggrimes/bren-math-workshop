@@ -371,18 +371,18 @@ Use the same principles of algebra and the properties of the right to manipulate
 <hr>
 
 $$
-\begin{aligned}
+\begin{align}
 x^0&=1 & x\ne0 \\
 x^{-n}&=\frac{1}{x^n} &x\ne0 \\
 x^ax^b&=x^{a+b} \\
 \frac{x^a}{x^b}&=x^{a-b}\\
 (x^a)^b&=x^{ab}\\
-(\frac{x}{y})^&a=\frac{x^a}{y^a}\\
+(\frac{x}{y})^a&=\frac{x^a}{y^a}\\
 (xy)^a&=x^ay^a\\
 (\sqrt[n]{x}=a)&\to x=a^n \\
 x^\frac{1}{n}&=\sqrt[n]{x}\\
 x^\frac{m}{n}&=(x^{\frac{1}{n}})^m=(\sqrt[n]{x})^m
-\end{aligned}
+\end{align}
 $$
 
 ## {#polynomials data-menu-title="Polynomials"}
