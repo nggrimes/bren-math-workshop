@@ -85,7 +85,7 @@ knitr::include_graphics("img/cake.png")
 
 Functions can be continuous or discontinuous
 
-- Continuous: For every value of x, f(x) returns a number
+- Continuous: For every value of $x$, $f(x)$ returns a number
 
 - Discontinuous: Parts are undefined
 
@@ -97,13 +97,13 @@ Functions can be continuous or discontinuous
 
 ::::{.columns}
 :::{.column width="33%"}
-```{r}
+```{r, out.width="220%"}
 knitr::include_graphics("img/dsqrt.PNG")
 ```
 
 :::
 :::{.column width="33%"}
-```{r}
+```{r, out.width="220%"}
 knitr::include_graphics("img/para.PNG")
 ```
 :::
@@ -159,7 +159,7 @@ $$
 
 Verbally:
 
-"The limit of the function f(x) as x approaches the value c is L"
+"The limit of the function $f(x)$ as $x$ approaches the value $c$ is $L$"
 
 
 ## {#lim-ex data-menu-title="Limit Example"}
@@ -169,10 +169,10 @@ Verbally:
 <hr>
 
 
-- What is the limit of $f(x)=2x^2-4$ as x approaches 2?
+- What is the limit of $f(x)=2x^2-4$ as $x$ approaches 2?
 
 :::{.incremental}
-- Strategy to solve: Evaluate f(x) at x getting closer and closer to 2
+- Strategy to solve: $Evaluate f(x)$ at $x$ getting closer and closer to 2
 
 
 - Quick sanity check, what should $f(2)=?$
@@ -188,7 +188,7 @@ Verbally:
 knitr::include_graphics("img/lim4.PNG")
 ```
 
-From both directions it looks like f(x) converges to 4
+From both directions it looks like $f(x)$ converges to 4
 
 $$
 \lim_{x\to c}(2x^2-4)=4
@@ -304,7 +304,7 @@ knitr::include_graphics("img/lim_graph_3.png")
 :::{.column width="50%'}
 
 
-x=2 may not exist, but we can still find a limit because it consistently approaches 3 from both directions
+$x=2$ may not exist, but we can still find a limit because it consistently approaches 3 from both directions
 :::
 ::::
 :::
@@ -381,7 +381,7 @@ Part 2:
 
 2) Can you think of examples where discontinuous functions might exist in environmental science?
 
-3) Choose a a team to draw an example of one of these statements:
+3) Choose as a team to draw an example of one of these statements:
 
 - $\lim_{x\to 4^-} f(x)$ and $\lim_{x\to 4^+}f(x)$ are both infinite
 
@@ -413,7 +413,7 @@ Taking the average rate of change to a set limit will eventually converge to the
 
 ## {#walkthrough-1 data-menu-title="Walthrough"}
 
-[Walk Trhough Example]{.slide-title}
+[Walk Through Example]{.slide-title}
 
 <hr>
 
@@ -613,6 +613,7 @@ $$
 
 - The absolute value function is one example $y=|x|$
 
+
 :::
 
 :::{.column width="50%"}
@@ -765,6 +766,8 @@ $$
 ## {#gta2-1 data-menu-title="Team Assessment 2 Questions"}
 
 1) As a team, list 5 fields of environmental science where studying the rate of change and derivatives would be important
+
+<br>
 
 2) Which rules should you use to take these derivatives?
 

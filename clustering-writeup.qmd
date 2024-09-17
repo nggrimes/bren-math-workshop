@@ -1,6 +1,9 @@
 ---
-title: "Bren Calculus Workshop"
+title: "How groups are assigned for the Calculus Workshop"
 format: html
+execute: 
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -10,21 +13,34 @@ library(googlesheets4)
 
 ## Introduction
 
+Students are assigned to groups to boost team building in the Bren Calculus Workshop. The process is included here with personal information masked for transparency and to continue to show students the power of R and data science. Skills greatly needed to succeed at Bren.
+
 ## Data import
 
-First we need to get the dat in from the Google form responses. For that we use the `googlesheets4` package. Normally you have to connect it to your gmail account the first time you use it, but I've already done that behind the scences. All we need to do is provide the google sheet url link.
+First we need to get the data in from the Google form responses. For that we use the `googlesheets4` package. Normally you have to connect it to your gmail account the first time you use it, but I've already done that behind the scences. All we need to do is provide the google sheet url link.
 
-```{r}
+```{r, echo=FALSE}
+
 data<-read_sheet("https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810") %>% 
   janitor::clean_names() %>% 
   select(-timestamp)
 ```
+```{r, echo=TRUE,eval=FALSE}
 
+data<-read_sheet("url to google sheet") %>% 
+  janitor::clean_names() %>% 
+  select(-timestamp)
+```
 
 ## Constrained K-means clustering
 
-```{r}
+K-means clustering is machine learning algorithm that groups objects of the nearest type to each other. Here, I used constrained k-means clustering as I need to have set sizes of groups to randomly sample from. The basic idea is that everyone's responses to the questionnaire should place them similarly along multiple dimensions. K-means will find those groups for me so I can then randomly pull out of those groups to make teams with at least one person comfortable with math, another not so comfortable, and the range in between. 
 
+You will learn all about this procedure in ESM 244 (with me as instructor!)
+
+The first step in the cleaning process is to turn all those funny category names into numeric values for the algorithm to group. I use a likert scale to approximate the responses numerically. 
+
+```{r}
 colnames(data)<-c("specialization","major","math_level","use","relationship","name")
 ```
 
@@ -76,6 +92,8 @@ df<-likert %>%
   unname()
 ```
 
+Now that all that mess is done, for this demonstration I will create random people with random responses to make sure the actual information of the students is protected.
+
 ```{r}
 ## Practice data_frame with a "fully" populated sample
 
@@ -97,7 +115,7 @@ group_size=5
 groups=floor(length(df[,1])/group_size)
 ```
 
-Unfortunately, the next step requires us to step away from R because no one has developed an appropriate package for the algorithm we're trying to use. Luckily for us, Quarto with `reticulate` makes running python and R code in the same workflow relatively easier. First we transfer the needed data from the R side to python suitable frames. Next we need to bring in the packages python needs to use for the algorithm. This is just like loading `library(tidyverse)` in R. Python also lets us name the package for our own personal uses. Personally, I rarely deviate from the authors recommendation. Next we set up the algorithm settings. Then call the alogrithm with a specific call much like we would in a TidyModels set up in R. We store the output in `labels` which is a vector of `[0:4]` of each students classifcation^[Reminder Python uses base 0. So the first index starts at 0 instead of 1 like in R]. 
+Unfortunately, the next step requires us to step away from R because no one has developed an appropriate package for the algorithm we're trying to use. Luckily for us, Quarto with `reticulate` makes running python and R code in the same workflow relatively easy. First we transfer the needed data from the R side to python suitable frames. Next we need to bring in the packages python needs to use for the algorithm. This is just like loading `library(tidyverse)` in R. Python also lets us name the package for our own personal uses. Personally, I rarely deviate from the authors recommendation. Next we set up the algorithm settings. Then call the algorithm with a specific call much like we would in a TidyModels set up in R. We store the output in `labels` which is a vector of `[0:4]` of each students classification^[Reminder Python uses base 0. So the first index starts at 0 instead of 1 like in R]. 
 
 ```{python}
 x=r.df
@@ -120,7 +138,8 @@ clf=KMeansConstrained(
 
 labels=clf.fit_predict(x)
 ```
-Now we bring the labels from python to R with a quick `reticulate::py` call. To add true randomness into the assignments, I make a function to mix up the names of each person in the clusters, and then apply to all using `purrr:map`. From there it's a matter of converting the list into a usable dataframe while maintaining all the names. List data manipulation is almost more of an art than a science. Do whatever you need to do to make it work for your problem. Here I want to keep a general structure because I don't know how many people will fill out the form beforehand.
+
+Next, we bring the labels from python to R with a quick `reticulate::py` call. To add true randomness into the assignments, I make a function to mix up the names of each person in the clusters, and then apply to all using `purrr:map`. From there it's a matter of converting the list into a usable dataframe while maintaining all the names. List data manipulation is almost more of an art than a science. Do whatever you need to do to make it work for your problem. Here I want to keep a general structure because I don't know how many people will fill out the form beforehand.
 
 ```{r}
 library(reticulate)
@@ -131,10 +150,23 @@ prac$name=stringi::stri_rand_strings(length(prac$labels),6)
 
 prac
 
+```
+
+Checkout the list of "students" above. If you squint, you can see how some labels seem to match relatively well. For example the 1st student as 1s across all input and was put into group 5 (labels=5). The next member of group 5, student 13, also has quite a bit of 1 survery responses so it makes sense that they should be grouped together. 
+
+Let's check to see if the groups are balanced with similar number of students in each.
+
+```{r}
+
 prac %>% 
   group_by(labels) %>% 
   summarize(n=n())
 
+```
+
+All the groups are well balanced. Next I make a function to mix up the students by sampling from each group the required number of times. Because of some potential inbalances, I have to fill empty spaces with NAs.
+
+```{r}
 ## mix up function
 
 mix<-function(data,group){
@@ -174,8 +206,6 @@ tdf
 
 
 
-
-
 ```
 
-
+Voila! At the end we have a random, but skill balanced mixture of students in the number of groups that I want.

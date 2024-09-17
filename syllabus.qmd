@@ -68,7 +68,7 @@ Typically TBL environments consist of outside learning modules that students can
 
 ## Course Materials
 
-Course materials will be accessible on the course website. Videos, problem sets, answer keys, and slides will be hosted there. In addition, any code generated for the course will be hosted on the workshop public [github repo](https://github.com/nggrimes/bren-math-workshop). Coding is a skill that will be taught at Bren through ESM 206, data bootcamp, and ESM 244. Seeing more examples of codes always helps to understand how it works.
+Course materials will be accessible on the [course website](nggrimes.github.io/brencalculus). Videos, problem sets, answer keys, and slides will be hosted there. In addition, any code generated for the course will be hosted on the workshop public [github repo](https://github.com/nggrimes/bren-math-workshop). Coding is a skill that will be taught at Bren through ESM 206, data bootcamp, and ESM 244. Seeing more examples of codes always helps to understand how it works.
 
 ## Schedule and Topic Outline
 
