@@ -2,7 +2,7 @@
 title: "Calculus Workshop"
 subtitle: "Algebra and Graphing Problem Set"
 author: "Nathan Grimes"
-date: "2023-09-19"
+date: "2024-09-19"
 output: 
   html_document:
     code_folding: hide
@@ -18,7 +18,7 @@ library(tidyverse)
 
 # Algebra basics
 
-1) Describe how solving for the roots (f(x)=0) of equations could be useful in environmental science? List at least one method to do so.
+1) Describe how solving for the roots ($f(x)=0$) of equations could be useful in environmental science? List at least one method to do so.
 
 2) Solve for x
 

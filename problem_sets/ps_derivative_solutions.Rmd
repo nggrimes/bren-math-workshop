@@ -2,7 +2,7 @@
 title: "Calculus Workshop"
 subtitle: "Applications of Derivatives Problem Set Solutions"
 author: "Nathan Grimes"
-date: "2023-09-19"
+date: "2024-09-19"
 output: pdf_document
 ---
 
@@ -13,6 +13,12 @@ library(tidyverse)
 ```
 
 *Answer the following questions to the best of your ability. Feel free to work with anyone in the cohort, though I would encourage attempting on your own first to make sure you fully understand the concepts.*
+
+# The most important homework question you'll ever have at Bren
+
+1) What local wine, beer, or coffee pairs best with a homework session?
+
+\textcolor{blue}{Personal preference, Third Window has the best smash burgers and McConnell's ice cream shakes and a great selection of beer. Muni wine and caje coffee share the courtyard if that's more your style}
 
 # Derivative Rules
 
@@ -66,7 +72,7 @@ c) $f'(x)<0$
     
 d) [Bonus] $f''(x)>0$
     
-\textcolor{purple}{We need to look for inflection points in the graph where it starts accelerating more or less. This occurs at $x=-1$. To the left the rate of deceleration is negative so $f''(x)<0$ and the to the right $f''(x)>0$}
+\textcolor{purple}{We need to look for inflection points in the graph where it starts accelerating more or less. This occurs at $x=-1$. To the left the graph is speeding up its decrease until it changes directions and then rises quickly so $f''(x)>0$. To the right of $x=-1$, the graph's rise is dampened so $f''(x)<0$.
 
     
 e) [Bonus] $f''(x)<0$

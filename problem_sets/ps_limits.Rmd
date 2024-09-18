@@ -2,7 +2,7 @@
 title: "Calculus Workshop"
 subtitle: "Limits and Derivatives Problem Set"
 author: "Nathan Grimes"
-date: "2023-09-19"
+date: "2024-09-19"
 output: pdf_document
 ---
 
@@ -67,7 +67,7 @@ $$
 
 a) $2x^2+4$ at $x=-3$
 
-b) x^4-5x^3+x-5 at $x=5$
+b) $x^4-5x^3+x-5$ at $x=5$
 
 c) $\frac{5}{x^2}$ at $x=2$
 

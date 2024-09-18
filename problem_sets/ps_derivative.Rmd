@@ -2,7 +2,7 @@
 title: "Calculus Workshop"
 subtitle: "Applications of Derivatives Problem Set"
 author: "Nathan Grimes"
-date: "2023-09-19"
+date: "2024-09-19"
 output: pdf_document
 ---
 
@@ -13,6 +13,10 @@ library(tidyverse)
 ```
 
 *Answer the following questions to the best of your ability. Feel free to work with anyone in the cohort, though I would encourage attempting on your own first to make sure you fully understand the concepts.*
+
+# The most important homework question you'll ever have at Bren
+
+1) What local wine, beer, or coffee pairs best with a homework session?
 
 # Derivative Rules
 

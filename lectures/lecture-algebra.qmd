@@ -95,7 +95,7 @@ Basically I'm using a constrained k-means algorithm to group everyone into equal
 
 - Complete in class team assessments
 
-[Feel free to work with anyone on out of class exercises]{.seagreen}
+[**Feel free to work with anyone on out of class exercises**]{.seagreen}
 
 ## {#math-envs data-menu-title="Math in Environmental Science" background-color="#003660"}
 
@@ -186,7 +186,7 @@ $$
 
 [We might be underestimating social cost of carbon because of adaptation (Dr. Jeon Bren PhD)](https://woongchanjeon.com/research/project/Adaptation/Jeon_Adaptation_December2023.pdf)
 
-[My own research in impacts from fishery insurance programs]{.gold}
+[My own research in impacts from fishery insurance programs](ibi-behavior-draft-3.pdf)
 
 :::
 :::
@@ -362,7 +362,7 @@ Many environmental variables follow exponential formulas like decay and growth
 
 You might find yourself trying to solve equations like $x^{\frac{3}{4}}=3x^{\frac{5}{3}}$
 
-Use the same principles of algebra and the properties of the right to manipulate
+Use the same principles of algebra and the properties on the next slide to manipulate
 
 ## {#exponents-rule data-menu-title="Exponents Rules"}
 
@@ -584,7 +584,7 @@ c=246
 \end{aligned}
 $$
 
-[This will probably be a nasty calculation, but that is what computers are for. The order does not matter, only that the a corresponds to the square term, the b to the 1st degree term, and the c to the constant]{.body-text-s}
+[This will probably be a nasty calculation, but that is what computers are for. The order does not matter, only that the $a$ corresponds to the square term, the $b$ to the 1st degree term, and the $c$ to the constant]{.body-text-s .teal-text}
 
 ## {#ta-sol-three data-menu-title="Solutions to first TA"}
 
@@ -594,7 +594,7 @@ $$
 
 3) What happens if $b^2-4ac$ is negative in the quadratic formula
 
-There are no real solutions, but imaginary solutions. Can still be useful (saddle path solutions, but that's for another class)
+[There are no real solutions, but imaginary solutions. Can still be useful (saddle path solutions, but that's for another class)]{.teal-text}
 
 ## {#ta-sol-four data-menu-title="Solutions to first TA"}
 
@@ -820,7 +820,7 @@ knitr::include_graphics("img/headline.PNG")
 ```
 
 :::{.fragment .fade-in}
-```{r echo=FALSE,fig.align='center',out.width="80%"}
+```{r echo=FALSE,fig.align='center',out.width="70%"}
 knitr::include_graphics("img/worm.PNG")
 ```
 :::
@@ -836,7 +836,7 @@ Easiest model to describe linear relationship between two variables
 $$
 \huge
 \begin{align}
-\underbrace{y}_{\text{y-variable}}=\overbrace{m}^{\text{Slope}}\underbrace{x}_{\text{x-variable}}+\overbrace{b}^{\text{y intercept}}
+\underbrace{y}_{\text{output}}=\overbrace{m}^{\text{Slope}}\underbrace{x}_{\text{input}}+\overbrace{b}^{\text{y intercept}}
 \end{align}
 $$
 
