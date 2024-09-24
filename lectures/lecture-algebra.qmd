@@ -1,13 +1,13 @@
 ---
 format: 
   revealjs:
-    chalkboard: false
+    chalkboard: true
     slide-number: true
     show-slide-number: print
     theme:
      - ucsb-media.scss
     logo: img/bren-logo.png
-embed-resources: true
+
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background=.white}
@@ -176,7 +176,7 @@ $$
 $$
 :::
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 :::{.center-text}
 **In Research**
 
@@ -262,7 +262,7 @@ $$
 
 <hr>
 
-Prices are important in economics, but not always available for environmental goods.
+Prices are important in economics, but not always available.
 
 <br>
 

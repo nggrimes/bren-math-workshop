@@ -115,8 +115,12 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   /* Title slide */
   
   /* Add image and change bg color */
+  
+  /* Title slide */
+  
+  /* Add image and change bg color */
   .title-slide {
-    background-image: url(https://raw.githubusercontent.com/nggrimes/ucsb-xaringan/master/img/ucsb_logo.png);
+    background-image: url(https://raw.githubusercontent.com/nggrimes/ucsb-xaringan/master/img/bren-logo.png);
     background-position: 9% 15%;
     background-size: 400px;
     background-color: #fff;
@@ -138,7 +142,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
 
 /* H2 fonts */
   .title-slide h2 {
-    color: #FEBC11;
+    color: #79A540;
       font-size: 35px;
     text-align: center;
     text-shadow: none;
@@ -150,7 +154,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   .title-slide h3 {
     font-size: 28px;
     font-weight: normal;
-    color: #111517;
+    color: #047C91;
       text-align: center;
     text-shadow: none;
     padding: 10px;
@@ -167,7 +171,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   /* SECTION DIVIDERS */
   /*~~~~~~~~~~~~~~~~~~*/
   
-  /* section divider blue */
+   /* section divider blue */
   .title-slide-section-blue {
     background-color: #003660;
       padding-left: 100px;  /* delete this for 4:3 aspect ratio */
@@ -179,17 +183,15 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   }
 
 /* section divider gaucho gold */
-  .title-slide-section-gold {
-    background-color: #FEBC11;
+  .title-slide-section-green {
+    background-color: #79A540;
       padding-left: 100px;  /* delete this for 4:3 aspect ratio */
   }
 
-/* section divider gold H1 fonts */
-  .title-slide-section-gold h1, .title-slide-section-gold h2, .title-slide-section-gold h3, .title-slide-section-gold p, .title-slide-section-gold ul {
-    color: #3D4952;
+/* section divider green H1 fonts */
+  .title-slide-section-green h1, .title-slide-section-green h2, .title-slide-section-green h3, .title-slide-section-green p, .title-slide-section-green ul {
+    color: #fff;
   }
-
-
 /*~~~~~~~~~~~~~~~~~~*/
   /* FINAL SLIDE      */
   /*~~~~~~~~~~~~~~~~~~*/
@@ -230,7 +232,7 @@ thead, tfoot, tr:nth-child(even) { background: none; }
   .title-slide-final h3 {
     font-size: 28px;
     font-weight: normal;
-    color: #111517;
+    color: #047C91;
       text-align: center;
     text-shadow: none;
     padding: 10px;
@@ -326,26 +328,29 @@ thead, tfoot, tr:nth-child(even) { background: none; }
     color:#003660;
   }
 
-h3 {
-  color: #FEBC11;
+h2 {
+  color:#79A540;
 }
 
+h3 {
+  color:#047C91;
+}
 /* Font size tags */
   .big {
     font-size: 1.5em;
   }
 
 /* ucsb blockquote */
-  uc-blockquote {
+  bren-blockquote {
     display: block;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 40px;
     margin-right: 40px;
     border-left: solid 10px #003660;
-    background-color: #FEBC11;
+    background-color: #79A540;
       padding: 1em;
-    color: #3D4952;
+    color: #fff;
       -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
   }

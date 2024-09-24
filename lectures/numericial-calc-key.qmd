@@ -1,0 +1,216 @@
+---
+title: "Numerical Calculus"
+subtitle: "Answer Key"
+author: "Nathaniel Grimes"
+format: "html"
+execute:
+  message: false
+  warning: false
+embed-resources: true
+
+---
+
+## Install Packages and load libraries
+
+```{r}
+#install.packages("mosaicCalc") # Notice this is commented out. Never render with install.packages. Once installed, it's forever on your computer
+
+library(mosaicCalc)
+library(tidyverse)
+```
+
+
+## Derivatives in R
+
+Best package to handle derivatives in R is `mosiacCalc`.  Primarily used as a teaching tool, so not powerful for many practical evaluations. Easiest to start with though.
+
+### Taking derivatives
+
+The `D()` function computes derivatives of functions. First let's look at the documentation for `D()`. The output of `D()` is actually a function so we can use it more practically in later steps. Notice we need to tell the function which variable we are taking the derivative with respect too.
+
+Start with a derivative we can do by hand $x^2$.
+
+The first input to `D()` is the formula we want to evaluate
+
+```{r}
+df_xsqr<-D(x^2~x)
+```
+
+The output returns a function with the name `df_xsqr()` that we feed any x's to get the value of that derivative evaluted at those x
+
+```{r}
+df_xsqr(3)
+```
+
+It also accepts vectors
+
+```{r}
+df_xsqr(1:6)
+
+```
+
+`D()` also accepts built in math functions
+
+```{r}
+df_ln=D(log(x)~x)
+
+df_ln
+```
+
+With `D()` we can quickly check and evaluate derivatives we have never seen or may be too complex for us to solve.
+
+For example, I never showed in class how to solve trigonometric derivaties. Use `D()` to find the derivative of $sin(y^2)$
+
+```{r}
+df_sinsqr<-D(sin(y^2)~y)  #Notice I don't always have to use x, but I do have to specify the correct variable to differentiate
+
+df_sinsqr
+```
+
+
+Plot the original $\sin(y^2)$ and its derivative using ggplot to see how they compare.
+
+```{r}
+
+#Make some vectors to plot
+
+x=seq(-5,5,by=.01)
+siny=sin(x^2)
+df_y=df_sinsqr(x)
+ggplot()+
+  geom_line(aes(x=x,y=siny),color="black")+
+  geom_line(aes(x=x,y=df_y),color="red")+
+  theme_classic()
+```
+
+
+Go wild and make up a function that you would not want to take the derivative of by hand. Use `D()` to find its derivative! Plot the original function and its derivative.
+
+```{r}
+df_crazy<-D(3*x^2+2*x^3+sin(x^2)+cos(x)~x)
+
+#plot the original function and df_crazy from -5 to 5
+x=seq(-5,5,by=.01)
+f_crazy=3*x^2+2*x^3+sin(x^2)+cos(x)
+df_crazy_y=df_crazy(x)
+
+ggplot()+
+  geom_line(aes(x=x,y=f_crazy,color="Original Function"))+
+  geom_line(aes(x=x,y=df_crazy_y,color="Derivative"))+
+  theme_classic()+
+  labs(color="Function")+
+  scale_color_manual(values=c("black","red"))
+```
+
+
+
+
+### Higher Order derivatives
+
+R also makes finding higher order derivatives easier. All we have to do is continue to differentiate with respect the variable.
+
+```{r}
+df3_ln<-D(ln(x)~x & x & x)
+
+df3_ln
+```
+
+## Integrals
+
+For definte integrals I actually prefer the base R `integrate` function. Same idea, but now we need to define our own functions beforehand.
+
+```{r}
+x_sqr<-function(x){
+  x^2
+}
+
+integrate(x_sqr,lower=1,upper=3)
+```
+
+We can do that by hand. What about functions that either have no solution or are extremely difficult to do by hand? We can use R to solve for those without to much headache.
+
+Let's use R to solve the probability density function of a normal distribution to find the probability that a random variable is between -1.96 and 1.96. Uses lots of parenthesis to make sure the order of operations is correct.
+
+$$
+\int_{-1.96}^{1.96} \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}dx
+$$
+
+```{r}
+normal<-function(x,mean,sd){
+  1/(sd*sqrt(2*pi))*exp(-0.5*((x-mean)/sd)^2)
+}
+
+integrate(normal,mean=0,sd=1,lower=-1.96,upper=1.96)
+
+```
+
+## Team Challenge
+
+1) Find derivative of $x^2-4x+2$. Find local optimums by evaluating the derivative from -5 to 5. `Which(output==0)` is a useful function to quickly find the index of x where the derivative is equal to zero.
+
+Is the optimum(s) a min or max? Use R to help you solve. Double check by making a graph of the original function.
+
+```{r}
+prob<-D(x^2-4*x+2~x)
+x=seq(-5,5)
+
+fmax<-prob(x)
+
+xstar=x[which(fmax==0)]
+
+prob_df2<-D(x^2-4*x+2~x & x)
+
+prob_df2(xstar)
+```
+
+The optimal value was found at `r `xstar`. By taking the second derivative and evaluating it at `r xstar`, we can see that it is a minimum by the 2nd order conditions ($f''(x^*)>0$).
+
+```{r}
+ggplot()+
+  geom_line(aes(x=x,y=x^2-4*x+2),color="black")+
+  theme_classic()+
+  labs(x="x",y="f(x)")+
+  scale_x_continuous(breaks=seq(-5,5,by=1))
+```
+
+
+
+2) We know the rate of carbon accumulation varies by season because of differences in tree cover in the northern and southern hemispheres. Regression models accounting for the seasonality have defined the rate of carbon change by $f(t)=3\sin(.25t)+(.01t+1)$. Where t is in years, $f(t)$= gigatons of Carbon additional carbon relative to the baseline. What will the total accumulation of additional carbon be in 100 years?
+
+
+```{r}
+carbon<-function(t){
+  3*sin(0.25*t)+(0.01*t+1)
+}
+
+integrate(carbon,lower=0,upper=100)
+
+```
+
+With this model we would predict that total additional carbon released into the atmosphere in 100 years will be about 150 gigatons.
+
+## Setting you up to succeed with all other functions
+
+Building on this principles you can start exploring packages that help solve environmental problems with calculus. Here is a list you may need or will encounter to solve all the types of problems we solved in class.
+
+Optimization:
+
+- `optim()`
+
+- `nls()`
+
+- `nloptr()`
+
+Differential Equations:
+
+- `ode()`
+
+- `deSolve()`
+
+- `sde()`
+
+Root Finders:
+
+- `solve()`
+
+- `uniroot()`

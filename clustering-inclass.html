@@ -117,7 +117,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data<span class="ot">&lt;-</span><span class="fu">read_sheet</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>timestamp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>timestamp) <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -231,10 +232,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code># A tibble: 4 × 2
      labels     n
   &lt;dbl[1d]&gt; &lt;int&gt;
-1         1    16
+1         1    18
 2         2    18
-3         3    16
-4         4    16</code></pre>
+3         3    18
+4         4    19</code></pre>
 </div>
 <details>
 <summary>Code</summary>
@@ -269,7 +270,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>tdf<span class="ot">=</span>tdf[<span class="dv">1</span><span class="sc">:</span>groups,]</span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>tdf<span class="sc">$</span>teammate_add<span class="ot">&lt;-</span>add_vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>tdf<span class="sc">$</span>teammate_add<span class="ot">&lt;-</span>add_vec</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>tdf<span class="sc">$</span>team_num<span class="ot">=</span><span class="fu">seq</span>(<span class="dv">1</span>,<span class="fu">length</span>(add_vec))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
@@ -287,120 +290,153 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: left;" data-quarto-table-cell-role="th">teammate3</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">teammate4</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">teammate_add</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">team_num</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Sophia Lecuona</td>
-<td style="text-align: left;">Olivia</td>
-<td style="text-align: left;">Steven Mitchell</td>
-<td style="text-align: left;">Wesley Martinez</td>
-<td style="text-align: left;">Janiece Luu</td>
+<td style="text-align: left;">Nick</td>
+<td style="text-align: left;">Garrett Craig</td>
+<td style="text-align: left;">Daniel O'Shea</td>
+<td style="text-align: left;">Melissa Rivas Hernandez</td>
+<td style="text-align: left;">Abbey Guilliat</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Henry Strecker</td>
-<td style="text-align: left;">Anna Perko</td>
-<td style="text-align: left;">Jake Cosmo</td>
-<td style="text-align: left;">Nicole Rosen</td>
-<td style="text-align: left;">Andrew Palacios</td>
+<td style="text-align: left;">Isabella Perez</td>
+<td style="text-align: left;">Travis Rennacker</td>
+<td style="text-align: left;">Scott schwartz</td>
+<td style="text-align: left;">Claire Anderson</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Caroline Edmonds</td>
-<td style="text-align: left;">Izzy Sofio</td>
-<td style="text-align: left;">Daphne Prodis</td>
-<td style="text-align: left;">Lilli Bennett</td>
+<td style="text-align: left;">Aaliyah</td>
+<td style="text-align: left;">Jackson Coldiron</td>
+<td style="text-align: left;">Lilia Mourier</td>
+<td style="text-align: left;">Gerald Clark</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Samantha Mislinski</td>
-<td style="text-align: left;">Jessie Altstatt</td>
-<td style="text-align: left;">Michaela Galarza</td>
-<td style="text-align: left;">Tatianna Suriel</td>
+<td style="text-align: left;">Samuel Cervantes</td>
+<td style="text-align: left;">Tina Tran</td>
+<td style="text-align: left;">Caroline Smith</td>
+<td style="text-align: left;">Lenaya-Aiden Gonzales</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Brenda Vuong</td>
-<td style="text-align: left;">Priscilla Ta</td>
+<td style="text-align: left;">Nolan Mitschke</td>
+<td style="text-align: left;">Angelina Taylor</td>
+<td style="text-align: left;">Emilie Lenoir</td>
+<td style="text-align: left;">Ben Ladabaum</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Claire Katzenberger</td>
+<td style="text-align: left;">Justin</td>
+<td style="text-align: left;">Lauren Puffer</td>
+<td style="text-align: left;">Carolina Chatila</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lucas d'Alva Duchrow</td>
+<td style="text-align: left;">Michelle Moreno</td>
+<td style="text-align: left;">Nico Gavigan</td>
+<td style="text-align: left;">Sarayu Ramnath</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Haven Parker</td>
+<td style="text-align: left;">Rebeca Adam</td>
+<td style="text-align: left;">Wes Noble</td>
+<td style="text-align: left;">Michelle Graham</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Emmalyn</td>
+<td style="text-align: left;">Natasha Atkins</td>
+<td style="text-align: left;">Karina</td>
+<td style="text-align: left;">Kyle Alves</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pablo Van Dyck</td>
+<td style="text-align: left;">Sydney Royal</td>
+<td style="text-align: left;">Nicholas Leong</td>
 <td style="text-align: left;">Jackson</td>
-<td style="text-align: left;">Manuela Diaz</td>
 <td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sabrina</td>
-<td style="text-align: left;">Sofía</td>
-<td style="text-align: left;">Rence Balitaan</td>
-<td style="text-align: left;">Sophie Bartley</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: right;">10</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Letty Aguilar</td>
-<td style="text-align: left;">Samson Grunwald</td>
-<td style="text-align: left;">Vrunda Tol</td>
-<td style="text-align: left;">Mara</td>
+<td style="text-align: left;">Allison Larko</td>
+<td style="text-align: left;">ADA</td>
+<td style="text-align: left;">Maya Kurani</td>
+<td style="text-align: left;">Ella Moore</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">11</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Sadie Armstrong</td>
-<td style="text-align: left;">Jessica Copeland</td>
-<td style="text-align: left;">Izzy Coiro</td>
-<td style="text-align: left;">Matilde Saucedo</td>
+<td style="text-align: left;">Charles O'Connor</td>
+<td style="text-align: left;">Danielle Turner</td>
+<td style="text-align: left;">Ashley Diedenhofen</td>
+<td style="text-align: left;">Gerald Clark</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">12</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sam Lance</td>
-<td style="text-align: left;">Madi</td>
-<td style="text-align: left;">Chelsea Sanford</td>
-<td style="text-align: left;">Natalie</td>
+<td style="text-align: left;">Sara Soroka</td>
+<td style="text-align: left;">Olly Johnson</td>
+<td style="text-align: left;">Lilian Khosravi</td>
+<td style="text-align: left;">William Dean</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Callan Green</td>
-<td style="text-align: left;">Thuy-Tien Bui</td>
-<td style="text-align: left;">Abigail kirk</td>
-<td style="text-align: left;">Miranda Scalzo</td>
+<td style="text-align: left;">Bella Pucker</td>
+<td style="text-align: left;">Elijah Khan</td>
+<td style="text-align: left;">Emma Strong</td>
+<td style="text-align: left;">Kylie McGuire</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">14</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Natalie Mayer</td>
-<td style="text-align: left;">Michael Roysner</td>
-<td style="text-align: left;">Akshaya</td>
-<td style="text-align: left;">Tali Cook</td>
+<td style="text-align: left;">Nicolas DeStephano</td>
+<td style="text-align: left;">Halle Kuhar-Pitters</td>
+<td style="text-align: left;">Elise Dauterive</td>
+<td style="text-align: left;">Isa Elias</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">15</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Dustin Duncan</td>
-<td style="text-align: left;">Taylor Cook</td>
-<td style="text-align: left;">Jacques Rebibo</td>
-<td style="text-align: left;">Kyle Erickson</td>
+<td style="text-align: left;">Megan Baker</td>
+<td style="text-align: left;">Marley Hatfield</td>
+<td style="text-align: left;">Karlie Hayes</td>
+<td style="text-align: left;">Ryan Stanley</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">16</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Maddie</td>
-<td style="text-align: left;">Shane</td>
-<td style="text-align: left;">Tulsi Mistry</td>
-<td style="text-align: left;">Kyle Burt</td>
+<td style="text-align: left;">Katerina Bischel</td>
+<td style="text-align: left;">Elizabeth Weathers</td>
+<td style="text-align: left;">Kaitlin Castor</td>
+<td style="text-align: left;">Tanvi Shah</td>
 <td style="text-align: left;">NA</td>
+<td style="text-align: right;">17</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Ryan Anderson</td>
-<td style="text-align: left;">Emma Tao</td>
-<td style="text-align: left;">Madison Kilkenny</td>
-<td style="text-align: left;">Ivette</td>
+<td style="text-align: left;">Andrew Castillo</td>
+<td style="text-align: left;">Avery Bowen</td>
+<td style="text-align: left;">Alon</td>
+<td style="text-align: left;">Nadav Kempinski</td>
 <td style="text-align: left;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Kelsey Warren</td>
-<td style="text-align: left;">Dana Cohen-Kaplan</td>
-<td style="text-align: left;">Anissa Stull</td>
-<td style="text-align: left;">Shivank Jhanji</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Jessica Rodriguez</td>
-<td style="text-align: left;">Maxwell Pepperdine</td>
-<td style="text-align: left;">Lauren Londoño</td>
-<td style="text-align: left;">Riley Black</td>
-<td style="text-align: left;">NA</td>
+<td style="text-align: right;">18</td>
 </tr>
 </tbody>
 </table>

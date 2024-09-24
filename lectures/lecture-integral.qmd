@@ -1,7 +1,7 @@
 ---
 format: 
   revealjs:
-    chalkboard: false
+    chalkboard: true
     slide-number: true
     show-slide-number: print
     theme:
@@ -21,7 +21,7 @@ format:
             }
           };
           </script>
-embed-resources: true
+
 ---
 
 ## {#title-slide data-menu-title="Title Slide" background=.white}
@@ -50,7 +50,7 @@ embed-resources: true
 
 ## {#ln data-menu-title="Natural Logs"}
 
-[But first we'll start with natural logarithms]{.slide-title}
+[Natural logarithms]{.slide-title}
 
 <hr>
 

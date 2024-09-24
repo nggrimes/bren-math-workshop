@@ -1,7 +1,7 @@
 ---
 title: "Class Response Breakdown"
 author: "Nathaniel Grimes"
-date: "2023-09-22"
+date: "2024-09-20"
 output: html_document
 ---
 
@@ -17,7 +17,8 @@ library(kableExtra)
 ```{r}
 data<-read_sheet("https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810") %>% 
   janitor::clean_names() %>% 
-  select(-timestamp)
+  select(-timestamp) |> 
+  drop_na()
 ```
 
 ```{r}
@@ -28,7 +29,7 @@ ggplot(data=data)+
   theme_classic()+
   labs(x="",y="",title="Major in Undergrad")+
   scale_y_continuous(expand = c(0, 0))+
-  scale_x_discrete(labels=c("Business","Computer\nScience","Economics","Environmental\nScience","Humanities\n(History,\nLiterature, Art)","Political Science","STEM"))+
+  scale_x_discrete(labels=c("Business","Economics","Environmental\nScience","Humanities\n(History,\nLiterature, Art)","Political Science","STEM"))+
   theme(axis.text.x=element_text(size=10))
 
 ggplot(data=data)+

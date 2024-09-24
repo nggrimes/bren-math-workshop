@@ -26,7 +26,8 @@ First we need to get the dat in from the Google form responses. For that we use 
 ```{r}
 data<-read_sheet("https://docs.google.com/spreadsheets/d/1EwUbwXUpAQvpXuF_zvK4aCXOP9ucYuam_r3xBgZ6cKw/edit?resourcekey#gid=967303810") %>% 
   janitor::clean_names() %>% 
-  select(-timestamp)
+  select(-timestamp) |> 
+  drop_na()
 ```
 
 
